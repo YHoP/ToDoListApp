@@ -21,7 +21,7 @@ public class MainActivity extends ListActivity {
     private ArrayList<String> mCategories;
     private Button mNewCategoryButton;
     private EditText mNewCategoryText;
-    private ArrayAdapter<String> mAdapter;
+    private MyAdapter mAdapter;
 
     Context mContext;
 
@@ -44,7 +44,7 @@ public class MainActivity extends ListActivity {
             mCategories.add(category.getName());
         }
 
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mCategories);
+        mAdapter = new MyAdapter(this, mCategories);
         // mAdapter = new ArrayAdapter<String>(this, R.layout.fragment_item_list, mCategories);
         setListAdapter(mAdapter);
 
