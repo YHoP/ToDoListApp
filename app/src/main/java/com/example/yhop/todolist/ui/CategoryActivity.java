@@ -1,11 +1,13 @@
 package com.example.yhop.todolist.ui;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.example.yhop.todolist.R;
 import com.example.yhop.todolist.models.Category;
@@ -54,6 +56,15 @@ public class CategoryActivity extends ListActivity {
         newTask.save();
         mTasks.add(description);
         mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        String thisTask = mTasks.get(position);
+        Task deleteTask = Task.find(thisTask);
+        deleteTask.delete();
+        mAdapter.remove(thisTask);
     }
 }
 

@@ -1,6 +1,7 @@
 package com.example.yhop.todolist.ui;
 
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,10 +23,14 @@ public class MainActivity extends ListActivity {
     private EditText mNewCategoryText;
     private ArrayAdapter<String> mAdapter;
 
+    Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mContext = this;
 
         Task newTask = new Task();
         newTask.save();
@@ -39,8 +44,8 @@ public class MainActivity extends ListActivity {
             mCategories.add(category.getName());
         }
 
-        // mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mCategories);
-        mAdapter = new ArrayAdapter<String>(this, R.layout.fragment_item_list, mCategories);
+        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mCategories);
+        // mAdapter = new ArrayAdapter<String>(this, R.layout.fragment_item_list, mCategories);
         setListAdapter(mAdapter);
 
         mNewCategoryButton.setOnClickListener(new View.OnClickListener() {
