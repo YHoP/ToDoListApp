@@ -17,8 +17,22 @@
             </intent-filter>
         </activity>
 
-        <meta-data android:name="AA_DB_NAME" android:value="Todo.db" />
-        <meta-data android:name="AA_DB_VERSION" android:value="1" />
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="Todo.db" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="2" />
+
+        <activity
+            android:name=".ui.CategoryActivity"
+            android:label="@string/title_activity_category"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.yhop.todolist.ui.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
