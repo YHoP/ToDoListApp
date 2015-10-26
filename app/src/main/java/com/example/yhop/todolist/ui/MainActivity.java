@@ -39,7 +39,8 @@ public class MainActivity extends ListActivity {
             mCategories.add(category.getName());
         }
 
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mCategories);
+        // mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mCategories);
+        mAdapter = new ArrayAdapter<String>(this, R.layout.fragment_item_list, mCategories);
         setListAdapter(mAdapter);
 
         mNewCategoryButton.setOnClickListener(new View.OnClickListener() {

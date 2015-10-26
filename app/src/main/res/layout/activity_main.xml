@@ -36,7 +36,8 @@ tools:context=".MainAvtivity">
     android:layout_height="wrap_content"
     android:id="@android:id/list"
     android:layout_centerHorizontal="true"
-    android:layout_below="@+id/newCategoryText"/>
+    android:layout_below="@+id/newCategoryText"
+    tools:listitem="@android:layout/simple_list_item_checked"/>
 
 <TextView
     android:layout_width="wrap_content"
